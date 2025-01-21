@@ -1,0 +1,14 @@
+{
+  "name": "grid-rows-masonry",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Bartram Nason <bartram@bartramnason.com>",
+  "license": "ISC",
+  "description": "A ponyfill for `grid-template-rows: masonry`",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
