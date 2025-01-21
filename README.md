@@ -1,3 +1,3 @@
 # Grid Rows Masonry
 
-A ponyfill for `grid-template-rows: masonry`;
+A ponyfill for `grid-template-rows: masonry;`

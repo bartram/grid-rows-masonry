@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
+    "outDir": "./dist",
     "target": "esnext",
     "module": "esnext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "./dist",
-  }
+    "declaration": true,
+    "allowJs": false,
+  },
+  "include": [
+    "./src"
+  ],
 }
