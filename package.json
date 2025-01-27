@@ -1,13 +1,24 @@
 {
   "name": "grid-rows-masonry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "files": [
     "dist/*"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
+  "git repository": "https://github.com/bartram/grid-rows-masonry",
+  "keywords": [
+    "grid",
+    "grid-template-rows",
+    "masonry",
+    "CSS",
+    "ponyfill",
+    "polyfill",
+    "shim"
+  ],
   "author": "Bartram Nason <bartram@bartramnason.com>",
   "license": "ISC",
   "description": "A ponyfill for `grid-template-rows: masonry`",
