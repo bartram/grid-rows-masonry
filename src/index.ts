@@ -1,12 +1,26 @@
+type Options = {
+  reorder: boolean;
+};
+
+const defaultOptions: Options = {
+  reorder: true,
+};
+
 export class GridRowsMasonry {
   grid: HTMLElement;
   children: HTMLElement[];
+  observer: ResizeObserver;
+  options: Options;
 
-  constructor(grid: HTMLElement) {
+  constructor(grid: HTMLElement, options: Partial<Options> = {}) {
     this.grid = grid;
-    this.children = Array.from(grid.children).filter((child): child is HTMLElement => child instanceof HTMLElement);
-    window.addEventListener("resize", this.handleResize);
-    this.handleResize();
+    this.children = Array.from(grid.children).filter(
+      (child): child is HTMLElement => child instanceof HTMLElement,
+    );
+    this.options = { ...defaultOptions, ...options };
+
+    this.observer = new ResizeObserver(this.handleResize);
+    this.observer.observe(this.grid);
   }
 
   private clearStyles = () => {
@@ -39,17 +53,25 @@ export class GridRowsMasonry {
       });
     rows.forEach((row, rowIndex) => {
       row.forEach((child, columnIndex) => {
+        let targetColumnIndex = columnIndex;
+
+        // find the index of the column with the smallest height
+        if (this.options.reorder) {
+          targetColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+        }
+
         // include the row gap for all but the first row
         const gap = rowIndex > 0 ? rowGap : 0;
-        const offset = columnHeights[columnIndex] - child.offsetTop + gap;
+        const offset = columnHeights[targetColumnIndex] - child.offsetTop + gap;
         child.style.marginTop = `${offset}px`;
-        columnHeights[columnIndex] += child.offsetHeight + gap;
+        child.style.gridColumnStart = `${targetColumnIndex + 1}`;
+        columnHeights[targetColumnIndex] += child.offsetHeight + gap;
       });
     });
   };
 
   destroy() {
     this.clearStyles();
-    window.removeEventListener("resize", this.handleResize);
+    this.observer.disconnect();
   }
 }
