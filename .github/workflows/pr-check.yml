@@ -22,11 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Start Storybook
-        run: npm run storybook
-
-      - name: Run tests
-        run: npm run test:visual
+      - name: Run visual tests
+        run: npm run build-storybook && npm run test:visual -- --reactUri file:./storybook-static
 
       - name: Lint code
         run: npm run lint
