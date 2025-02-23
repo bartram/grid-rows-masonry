@@ -96,6 +96,6 @@ export const ChangeDisplay: StoryObj = {
         masonryLayout.style.display = "flex";
         masonryLayout.style.flexDirection = "column";
       }
-    }, 200);
+    });
   },
 };
