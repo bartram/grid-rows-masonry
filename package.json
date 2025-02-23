@@ -3,7 +3,8 @@
   "version": "1.0.2",
   "main": "dist/index.js",
   "files": [
-    "dist/*"
+    "dist/*",
+    "assets/*"
   ],
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
