@@ -3,11 +3,18 @@
   "version": "1.0.2",
   "main": "dist/index.js",
   "files": [
-    "dist/*"
+    "dist/*",
+    "assets/*"
   ],
   "scripts": {
-    "build": "tsc",
-    "prepublish": "npm run build"
+    "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test:visual": "loki test",
+    "update:visual": "loki update",
+    "prettier:check": "prettier --check ./src",
+    "prettier:write": "prettier --write ./src",
+    "lint": "eslint ./src"
   },
   "git repository": "https://github.com/bartram/grid-rows-masonry",
   "keywords": [
@@ -23,11 +30,45 @@
   "license": "ISC",
   "description": "A ponyfill for `grid-template-rows: masonry`",
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.1",
     "@semantic-release/npm": "^12.0.1",
+    "@storybook/addon-essentials": "^8.5.8",
+    "@storybook/addon-interactions": "^8.5.8",
+    "@storybook/blocks": "^8.5.8",
+    "@storybook/html": "^8.5.8",
+    "@storybook/html-vite": "^8.5.8",
+    "@storybook/test": "^8.5.8",
+    "@types/jest": "^29.5.14",
+    "eslint": "^9.20.1",
+    "globals": "^16.0.0",
+    "loki": "^0.35.1",
+    "prettier": "^3.5.1",
     "semantic-release": "^24.2.3",
-    "typescript": "^5.7.3"
+    "storybook": "^8.5.8",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
+  },
+  "overrides": {
+    "ink": {
+      "react": "^17.0.2"
+    }
   }
 }

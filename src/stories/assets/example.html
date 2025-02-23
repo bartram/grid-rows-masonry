@@ -1,0 +1,19 @@
+<div class="masonry-layout">
+  <div style="height: 100px; background-color: red"></div>
+  <div style="height: 220px; background-color: green"></div>
+  <div style="height: 40px; background-color: blue"></div>
+  <div style="height: 380px; background-color: yellow"></div>
+  <div style="height: 90px; background-color: orange"></div>
+  <div style="height: 65px; background-color: purple"></div>
+  <div style="height: 400px; background-color: pink"></div>
+  <div style="height: 120px; background-color: cyan"></div>
+  <div style="height: 150px; background-color: magenta"></div>
+</div>
+<style>
+  .masonry-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: masonry;
+    gap: 10px;
+  }
+</style>
