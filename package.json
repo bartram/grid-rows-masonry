@@ -3,8 +3,7 @@
   "version": "1.0.2",
   "main": "dist/index.js",
   "files": [
-    "dist/*",
-    "assets/*"
+    "dist/*"
   ],
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
@@ -28,7 +27,7 @@
   ],
   "author": "Bartram Nason <bartram@bartramnason.com>",
   "license": "ISC",
-  "description": "A ponyfill for `grid-template-rows: masonry`",
+  "description": "A ponyfill for the CSS grid masonry layout",
   "devDependencies": {
     "@eslint/js": "^9.20.0",
     "@semantic-release/changelog": "^6.0.3",
