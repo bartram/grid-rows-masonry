@@ -6,7 +6,7 @@ export class GridRowsMasonry {
   constructor(grid: HTMLElement) {
     this.grid = grid;
     this.children = Array.from(grid.children).filter(
-      (child): child is HTMLElement => child instanceof HTMLElement
+      (child): child is HTMLElement => child instanceof HTMLElement,
     );
 
     this.observer = new ResizeObserver(this.handleResize);
