@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
     "outDir": "./dist",
     "target": "esnext",
     "module": "esnext",
@@ -13,6 +12,7 @@
     "jsx": "react-jsx",
   },
   "include": [
-    "./src"
+    "./src",
+    "./stories"
   ],
 }

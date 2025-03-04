@@ -68,14 +68,6 @@ const MyMasonryGrid = () => {
 
 ## Example
 
-### Before
-
-Grid layout without the **Grid Rows Masonry** ponyfill applied.
-
-![A grid of ten images of mid-century modern furniture without the masonry layout applied.](https://github.com/bartram/grid-rows-masonry/raw/main/assets/demo-before.png)
-
-### After
-
 Grid layout with the **Grid Rows Masonry** ponyfill applied.
 
 ![A masonry layout of ten images of mid-century modern furniture](https://github.com/bartram/grid-rows-masonry/raw/main/assets/demo-after.png)
