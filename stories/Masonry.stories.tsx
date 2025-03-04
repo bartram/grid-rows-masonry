@@ -65,8 +65,48 @@ export const ChangeDisplay: StoryObj = {
   render: BlockExample,
   play: async ({ canvasElement }: StoryContext) => {
     setTimeout(() => {
-      (canvasElement.firstChild as HTMLElement).style.display = "flex";
-      (canvasElement.firstChild as HTMLElement).style.flexDirection = "column";
+      const grid = canvasElement.firstChild as HTMLElement;
+      grid.style.display = "flex";
+      grid.style.flexDirection = "column";
+    });
+  },
+};
+
+export const AddChild: StoryObj = {
+  name: "Add child",
+  render: BlockExample,
+  play: async ({ canvasElement }: StoryContext) => {
+    setTimeout(() => {
+      const grid = canvasElement.firstChild as HTMLElement;
+      const child = document.createElement("div");
+      child.style.height = "100px";
+      child.style.backgroundColor = "blue";
+      grid.appendChild(child);
+    });
+  },
+};
+
+export const RemoveChild: StoryObj = {
+  name: "Remove child",
+  render: BlockExample,
+  play: async ({ canvasElement }: StoryContext) => {
+    setTimeout(() => {
+      const grid = canvasElement.firstChild as HTMLElement;
+      const child = grid.childNodes[3] as HTMLElement;
+      grid.removeChild(child);
+    });
+  },
+};
+
+export const ResizeChild: StoryObj = {
+  name: "Resize child",
+  render: BlockExample,
+  play: async ({ canvasElement }: StoryContext) => {
+    setTimeout(() => {
+      const grid = canvasElement.firstChild as HTMLElement;
+      const child = grid.childNodes[2] as HTMLElement;
+      // child is initially 40px, resize to 120px
+      child.style.height = "120px";
     });
   },
 };
