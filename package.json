@@ -1,11 +1,15 @@
 {
   "name": "grid-rows-masonry",
   "version": "1.0.4",
-  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./react": "./dist/react/index.js"
+  },
   "files": [
     "dist/*"
   ],
   "scripts": {
+    "watch": "nodemon --watch src --exec 'npm run build' --ext 'ts,tsx'",
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -44,11 +48,20 @@
     "eslint": "^9.20.1",
     "globals": "^16.0.0",
     "loki": "^0.35.1",
+    "nodemon": "^3.1.9",
     "prettier": "^3.5.1",
     "semantic-release": "^24.2.3",
     "storybook": "^8.5.8",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.24.1"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
   },
   "loki": {
     "configurations": {

@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "declaration": true,
     "allowJs": false,
+    "jsx": "react-jsx",
   },
   "include": [
     "./src"
