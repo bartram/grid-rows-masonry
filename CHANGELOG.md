@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/bartram/grid-rows-masonry/compare/v1.0.4...v1.1.0) (2025-03-04)
+
+
+### Features
+
+* add `disabled` property to GridRowsMasonry component ([b7ba5b7](https://github.com/bartram/grid-rows-masonry/commit/b7ba5b7e4e283e36d2740b8ec85897d715bda757))
+* add react component ([8cf5df2](https://github.com/bartram/grid-rows-masonry/commit/8cf5df22dfc7ebe5f05ebf5486ced08cdc74e343))
+
 ## [1.0.4](https://github.com/bartram/grid-rows-masonry/compare/v1.0.3...v1.0.4) (2025-02-23)
 
 
