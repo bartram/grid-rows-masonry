@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/bartram/grid-rows-masonry/compare/v1.1.0...v1.1.1) (2025-03-04)
+
+
+### Bug Fixes
+
+* update layout on mutation and child resize ([fadd14e](https://github.com/bartram/grid-rows-masonry/commit/fadd14e7d0bafe3d31055f96be484bc27c3386a4))
+
 # [1.1.0](https://github.com/bartram/grid-rows-masonry/compare/v1.0.4...v1.1.0) (2025-03-04)
 
 
