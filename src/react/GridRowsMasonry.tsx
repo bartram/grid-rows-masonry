@@ -9,17 +9,18 @@ import {
 
 type MasonryProps<C extends ElementType = "div"> = {
   component?: C;
+  disabled?: boolean;
 } & ComponentProps<C>;
 
 export const GridRowsMasonry = (props: MasonryProps) => {
+  const { component = "div", disabled = false } = props;
   const ref = useRef(null);
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && !disabled) {
       const masonry = new Class(ref.current);
       return () => masonry.destroy();
     }
-  }, []);
+  }, [disabled]);
 
-  const { component = "div" } = props;
   return createElement(component, { ...props, ref });
 };
