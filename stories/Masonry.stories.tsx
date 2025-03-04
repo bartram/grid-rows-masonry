@@ -1,17 +1,16 @@
 import type { Meta, StoryContext, StoryObj } from "@storybook/react";
-
 import { BlockExample } from "./assets/BlockExample";
 import { ImageExample } from "./assets/ImageExample";
 import { CSSProperties } from "react";
 
-export type GridRowsMasonryStoryArgs = {
+export type MasonryStoryArgs = {
   disabled?: boolean;
   position?: "absolute" | "relative" | "static";
   gridTemplateColumns?: CSSProperties["gridTemplateColumns"];
 };
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta: Meta<GridRowsMasonryStoryArgs> = {
+const meta: Meta<MasonryStoryArgs> = {
   title: "Grid Rows Masonry",
   tags: ["autodocs"],
   argTypes: {

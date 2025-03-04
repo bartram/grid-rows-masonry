@@ -1,1 +1,1 @@
-export * from "./GridRowsMasonry";
+export * from "./Masonry";

@@ -1,15 +1,11 @@
-import { GridRowsMasonry } from "../../src/react";
-import type { GridRowsMasonryStoryArgs } from "../GridRowsMasonry.stories";
+import { Masonry } from "../../src/react";
+import type { MasonryStoryArgs } from "../Masonry.stories";
 import classes from "./BlockExample.module.css";
 
-export const BlockExample = (props: GridRowsMasonryStoryArgs) => {
+export const BlockExample = (props: MasonryStoryArgs) => {
   const { disabled, ...style } = props;
   return (
-    <GridRowsMasonry
-      className={classes.root}
-      disabled={disabled}
-      style={{ ...style }}
-    >
+    <Masonry className={classes.root} disabled={disabled} style={{ ...style }}>
       <div style={{ height: 100, backgroundColor: "red" }} />
       <div style={{ height: 220, backgroundColor: "green" }} />
       <div style={{ height: 40, backgroundColor: "blue" }} />
@@ -19,6 +15,6 @@ export const BlockExample = (props: GridRowsMasonryStoryArgs) => {
       <div style={{ height: 400, backgroundColor: "pink" }} />
       <div style={{ height: 120, backgroundColor: "cyan" }} />
       <div style={{ height: 150, backgroundColor: "magenta" }} />
-    </GridRowsMasonry>
+    </Masonry>
   );
 };

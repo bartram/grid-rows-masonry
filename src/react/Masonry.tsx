@@ -12,7 +12,7 @@ type MasonryProps<C extends ElementType = "div"> = {
   disabled?: boolean;
 } & ComponentProps<C>;
 
-export const GridRowsMasonry = (props: MasonryProps) => {
+export const Masonry = (props: MasonryProps) => {
   const { component = "div", disabled = false } = props;
   const ref = useRef(null);
   useEffect(() => {

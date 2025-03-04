@@ -1,15 +1,11 @@
-import { GridRowsMasonry } from "../../src/react";
-import type { GridRowsMasonryStoryArgs } from "../GridRowsMasonry.stories";
+import { Masonry } from "../../src/react";
+import type { MasonryStoryArgs } from "../Masonry.stories";
 import classes from "./ImageExample.module.css";
 
-export const ImageExample = (props: GridRowsMasonryStoryArgs) => {
+export const ImageExample = (props: MasonryStoryArgs) => {
   const { disabled, ...style } = props;
   return (
-    <GridRowsMasonry
-      className={classes.root}
-      disabled={disabled}
-      style={{ ...style }}
-    >
+    <Masonry className={classes.root} disabled={disabled} style={{ ...style }}>
       <img src="./images/armchair.jpeg" />
       <img src="./images/coffee-table.jpeg" />
       <img src="./images/planter.jpeg" />
@@ -21,6 +17,6 @@ export const ImageExample = (props: GridRowsMasonryStoryArgs) => {
       <img src="./images/lamp.jpeg" />
       <img src="./images/desk.jpeg" />
       <img src="./images/ottoman.jpeg" />
-    </GridRowsMasonry>
+    </Masonry>
   );
 };
