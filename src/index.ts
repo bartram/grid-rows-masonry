@@ -1,33 +1,48 @@
 export class GridRowsMasonry {
   grid: HTMLElement;
-  children: HTMLElement[];
-  observer: ResizeObserver;
+  resizeObserver: ResizeObserver;
+  mutationObserver: MutationObserver;
 
   constructor(grid: HTMLElement) {
     this.grid = grid;
-    this.children = Array.from(grid.children).filter(
-      (child): child is HTMLElement => child instanceof HTMLElement,
-    );
+    this.resizeObserver = new ResizeObserver(() => {
+      this.updateLayout();
+    });
+    this.mutationObserver = new MutationObserver((records) => {
+      this.updateLayout();
+      records.forEach((record) => {
+        record.addedNodes.forEach((node) => {
+          this.resizeObserver.observe(node as HTMLElement);
+        });
+      });
+    });
 
-    this.observer = new ResizeObserver(this.handleResize);
-    this.observer.observe(this.grid);
+    this.resizeObserver.observe(this.grid);
+    this.getChildren().forEach((child) => {
+      this.resizeObserver.observe(child);
+    });
+    this.mutationObserver.observe(this.grid, {
+      childList: true,
+    });
   }
 
+  private getChildren = () => {
+    return Array.from(this.grid.children).filter(
+      (child): child is HTMLElement => child instanceof HTMLElement
+    );
+  };
+
   private clearStyles = () => {
-    this.children.forEach((child) => {
+    this.getChildren().forEach((child) => {
       child.style.marginTop = "";
       child.style.gridColumnStart = "";
     });
   };
 
-  private handleResize = () => {
+  private updateLayout = () => {
     this.clearStyles();
     const gridStyle = window.getComputedStyle(this.grid);
-
-    let parentTop: number;
-    if (gridStyle.position === "static") {
-      parentTop = this.grid.getBoundingClientRect().top;
-    }
+    const parentTop = this.grid.getBoundingClientRect().top;
 
     if (gridStyle.display !== "grid") {
       // display is not grid, so no need for masonry
@@ -47,7 +62,8 @@ export class GridRowsMasonry {
     const rowGap = parseFloat(gridStyle.rowGap);
     const rows: HTMLElement[][] = [];
     const columnHeights: number[] = new Array(numColumns).fill(0);
-    this.children
+
+    this.getChildren()
       .filter((child) => !!child.offsetParent)
       .forEach((child, index) => {
         const rowIndex = Math.floor(index / numColumns);
@@ -66,14 +82,9 @@ export class GridRowsMasonry {
         // reorder the columns before setting the margin
         child.style.gridColumnStart = `${targetColumnIndex + 1}`;
 
-        let offsetTop: number;
-        if (parentTop !== undefined) {
-          // calculate the diff for this child element from the bounding rect of the parent
-          const childTop = child.getBoundingClientRect().top;
-          offsetTop = childTop - parentTop;
-        } else {
-          offsetTop = child.offsetTop;
-        }
+        // calculate the diff for this child element from the bounding rect of the parent
+        const childTop = child.getBoundingClientRect().top;
+        const offsetTop = childTop - parentTop;
 
         const marginTop = columnHeights[targetColumnIndex] - offsetTop + gap;
         child.style.marginTop = `${marginTop}px`;
@@ -86,6 +97,7 @@ export class GridRowsMasonry {
 
   destroy() {
     this.clearStyles();
-    this.observer.disconnect();
+    this.resizeObserver.disconnect();
+    this.mutationObserver.disconnect();
   }
 }
