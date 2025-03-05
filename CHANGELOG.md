@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/bartram/grid-rows-masonry/compare/v1.1.1...v1.1.2) (2025-03-05)
+
+
+### Bug Fixes
+
+* loosen react dependency ([a94589a](https://github.com/bartram/grid-rows-masonry/commit/a94589a48da819c3cc9e7d9589287692f3b05598))
+
 ## [1.1.1](https://github.com/bartram/grid-rows-masonry/compare/v1.1.0...v1.1.1) (2025-03-04)
 
 
