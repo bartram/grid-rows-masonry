@@ -55,7 +55,7 @@
     "typescript-eslint": "^8.24.1"
   },
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=17"
   },
   "peerDependenciesMeta": {
     "react": {
