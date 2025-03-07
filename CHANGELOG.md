@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/bartram/grid-rows-masonry/compare/v1.1.2...v1.1.3) (2025-03-07)
+
+
+### Bug Fixes
+
+* handle top margin on child elements ([#11](https://github.com/bartram/grid-rows-masonry/issues/11)) ([23cd948](https://github.com/bartram/grid-rows-masonry/commit/23cd9489e104a591910bb5ac30f695b015447655))
+* include child margin in layout calculation ([e614957](https://github.com/bartram/grid-rows-masonry/commit/e61495786053e01e7bfd6b83428a0b60f5568026))
+
 ## [1.1.2](https://github.com/bartram/grid-rows-masonry/compare/v1.1.1...v1.1.2) (2025-03-05)
 
 
