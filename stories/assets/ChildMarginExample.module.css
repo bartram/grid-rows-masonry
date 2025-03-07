@@ -1,0 +1,9 @@
+.root {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: masonry;
+  column-gap: 10px;
+}
+.root > div {
+  margin-block: 10px;
+}

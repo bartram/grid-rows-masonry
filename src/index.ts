@@ -28,7 +28,7 @@ export class GridRowsMasonry {
 
   private getChildren = () => {
     return Array.from(this.grid.children).filter(
-      (child): child is HTMLElement => child instanceof HTMLElement
+      (child): child is HTMLElement => child instanceof HTMLElement,
     );
   };
 
@@ -59,7 +59,7 @@ export class GridRowsMasonry {
       // no need for masonry if there's only one column
       return;
     }
-    const rowGap = parseFloat(gridStyle.rowGap);
+    const rowGap = parseFloat(gridStyle.rowGap) || 0;
     const rows: HTMLElement[][] = [];
     const columnHeights: number[] = new Array(numColumns).fill(0);
 
@@ -84,13 +84,19 @@ export class GridRowsMasonry {
 
         // calculate the diff for this child element from the bounding rect of the parent
         const childTop = child.getBoundingClientRect().top;
-        const offsetTop = childTop - parentTop;
+        const childStyle = window.getComputedStyle(child);
+        const childMarginTop = parseFloat(childStyle.marginTop) || 0;
+        const childMarginBottom = parseFloat(childStyle.marginBottom) || 0;
+        const childHeight =
+          child.offsetHeight + childMarginTop + childMarginBottom;
 
-        const marginTop = columnHeights[targetColumnIndex] - offsetTop + gap;
+        const offsetTop = childTop - parentTop - childMarginTop;
+        const marginTop =
+          columnHeights[targetColumnIndex] - offsetTop + childMarginTop + gap;
         child.style.marginTop = `${marginTop}px`;
 
         // add the height of this child element to the column height
-        columnHeights[targetColumnIndex] += child.offsetHeight + gap;
+        columnHeights[targetColumnIndex] += childHeight + gap;
       });
     });
   };

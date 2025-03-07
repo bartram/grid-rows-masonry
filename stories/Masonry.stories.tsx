@@ -1,6 +1,7 @@
 import type { Meta, StoryContext, StoryObj } from "@storybook/react";
 import { BlockExample } from "./assets/BlockExample";
 import { ImageExample } from "./assets/ImageExample";
+import { ChildMarginExample } from "./assets/ChildMarginExample";
 import { CSSProperties } from "react";
 
 export type MasonryStoryArgs = {
@@ -109,4 +110,9 @@ export const ResizeChild: StoryObj = {
       child.style.height = "120px";
     });
   },
+};
+
+export const ChildMargin: StoryObj = {
+  name: "Child with margin",
+  render: ChildMarginExample,
 };
