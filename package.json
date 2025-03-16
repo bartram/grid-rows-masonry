@@ -25,13 +25,14 @@
     "grid-template-rows",
     "masonry",
     "CSS",
+    "React",
     "ponyfill",
     "polyfill",
     "shim"
   ],
   "author": "Bartram Nason <bartram@bartramnason.com>",
   "license": "ISC",
-  "description": "A ponyfill for the CSS grid masonry layout",
+  "description": "A ponyfill for CSS Grid masonry layout in plain JavaScript and React.",
   "devDependencies": {
     "@eslint/js": "^9.20.0",
     "@semantic-release/changelog": "^6.0.3",
