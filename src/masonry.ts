@@ -28,7 +28,7 @@ export class Masonry {
 
   private getChildren = () => {
     return Array.from(this.grid.children).filter(
-      (child): child is HTMLElement => child instanceof HTMLElement
+      (child): child is HTMLElement => child instanceof HTMLElement,
     );
   };
 
