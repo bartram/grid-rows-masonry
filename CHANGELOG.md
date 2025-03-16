@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/bartram/grid-rows-masonry/compare/v1.1.3...v1.1.4) (2025-03-16)
+
+
+### Bug Fixes
+
+* release documentation update ([e6d24d4](https://github.com/bartram/grid-rows-masonry/commit/e6d24d443311e4bc11721f42cf2786aee89761c2))
+
 ## [1.1.3](https://github.com/bartram/grid-rows-masonry/compare/v1.1.2...v1.1.3) (2025-03-07)
 
 
