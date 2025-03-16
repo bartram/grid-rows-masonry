@@ -1,4 +1,4 @@
-import { GridRowsMasonry as Class } from "../index";
+import { Masonry as MasonryClass } from "../masonry";
 import {
   ComponentProps,
   createElement,
@@ -17,7 +17,7 @@ export const Masonry = (props: MasonryProps) => {
   const ref = useRef(null);
   useEffect(() => {
     if (ref.current && !disabled) {
-      const masonry = new Class(ref.current);
+      const masonry = new MasonryClass(ref.current);
       return () => masonry.destroy();
     }
   }, [disabled]);

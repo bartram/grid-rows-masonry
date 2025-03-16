@@ -27,10 +27,10 @@ npm install grid-rows-masonry
 2. Import the module and initialize it:
 
 ```javascript
-import { GridRowsMasonry } from "grid-rows-masonry";
+import { Masonry } from "grid-rows-masonry";
 
 const el = document.getElementById("my-grid");
-const masonry = new GridRowsMasonry(el);
+const masonry = new Masonry(el);
 ```
 
 3. To reset the layout, call the destroy() method:
@@ -39,32 +39,29 @@ const masonry = new GridRowsMasonry(el);
 masonry.destroy();
 ```
 
-To use the module with React:
+## Usage with React
+
+To use the Masonry React component exported from `grid-rows-masonry/react`:
+
+1. Import the component:
 
 ```javascript
-import { useEffect, useRef } from "react";
-import { GridRowsMasonry } from "grid-rows-masonry";
+import { Masonry } from "grid-rows-masonry/react";
+```
 
-const MyMasonryGrid = () => {
-  const ref = useRef(null);
+2. Use the component in your React application, ensuring to set the `display: grid` style:
 
-  useEffect(() => {
-    if (ref.current) {
-      const masonry = new GridRowsMasonry(ref.current);
-      return () => masonry.destroy();
-    }
-  }, []);
-
+```javascript
+const MyGrid = () => {
   return (
-    <div
-      ref={ref}
-      style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}
-    >
+    <Masonry style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
       ...
-    </div>
+    </Masonry>
   );
 };
 ```
+
+This component will automatically handle the masonry layout for its children.
 
 ## Example
 
