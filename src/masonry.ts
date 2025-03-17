@@ -42,7 +42,6 @@ export class Masonry {
   private updateLayout = () => {
     this.clearStyles();
     const gridStyle = window.getComputedStyle(this.grid);
-    const parentTop = this.grid.getBoundingClientRect().top;
 
     if (gridStyle.display !== "grid") {
       // display is not grid, so no need for masonry
@@ -54,6 +53,10 @@ export class Masonry {
       console.warn("Masonry layout is already supported natively");
       return;
     }
+
+    const parentPaddingTop = parseFloat(gridStyle.paddingTop) || 0;
+    const parentTop = this.grid.getBoundingClientRect().top + parentPaddingTop;
+
     const numColumns = gridStyle.gridTemplateColumns.split(" ").length;
     if (numColumns <= 1) {
       // no need for masonry if there's only one column

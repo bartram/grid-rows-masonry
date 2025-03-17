@@ -1,11 +1,18 @@
+import { HTMLAttributes } from "react";
 import { Masonry } from "../../src/react";
 import type { MasonryStoryArgs } from "../Masonry.stories";
 import classes from "./BlockExample.module.css";
 
-export const BlockExample = (props: MasonryStoryArgs) => {
-  const { disabled, ...style } = props;
+export const BlockExample = (
+  props: MasonryStoryArgs & HTMLAttributes<HTMLDivElement>,
+) => {
+  const { disabled, position, gridTemplateColumns, style } = props;
   return (
-    <Masonry className={classes.root} disabled={disabled} style={{ ...style }}>
+    <Masonry
+      className={classes.root}
+      disabled={disabled}
+      style={{ position, gridTemplateColumns, ...style }}
+    >
       <div style={{ height: 100, backgroundColor: "red" }} />
       <div style={{ height: 220, backgroundColor: "green" }} />
       <div style={{ height: 40, backgroundColor: "blue" }} />

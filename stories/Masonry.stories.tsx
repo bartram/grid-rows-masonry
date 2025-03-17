@@ -3,12 +3,15 @@ import { BlockExample } from "./assets/BlockExample";
 import { ImageExample } from "./assets/ImageExample";
 import { ChildMarginExample } from "./assets/ChildMarginExample";
 import { CSSProperties } from "react";
+import { Masonry } from "../src/react";
 
 export type MasonryStoryArgs = {
   disabled?: boolean;
   position?: "absolute" | "relative" | "static";
   gridTemplateColumns?: CSSProperties["gridTemplateColumns"];
 };
+
+export type Story = StoryObj<MasonryStoryArgs>;
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<MasonryStoryArgs> = {
@@ -35,12 +38,12 @@ const meta: Meta<MasonryStoryArgs> = {
 
 export default meta;
 
-export const Demo: StoryObj = {
+export const Demo: Story = {
   name: "Demo with even columns",
   render: ImageExample,
 };
 
-export const DemoUneven: StoryObj = {
+export const DemoUneven: Story = {
   name: "Demo with uneven columns",
   render: ImageExample,
   args: {
@@ -48,12 +51,12 @@ export const DemoUneven: StoryObj = {
   },
 };
 
-export const Example: StoryObj = {
+export const Example: Story = {
   name: "Example with three columns",
   render: BlockExample,
 };
 
-export const RelativePosition: StoryObj = {
+export const RelativePosition: Story = {
   name: "Example with `position: relative;`",
   render: BlockExample,
   args: {
@@ -61,7 +64,7 @@ export const RelativePosition: StoryObj = {
   },
 };
 
-export const ChangeDisplay: StoryObj = {
+export const ChangeDisplay: Story = {
   name: "Display change example",
   render: BlockExample,
   play: async ({ canvasElement }: StoryContext) => {
@@ -73,7 +76,7 @@ export const ChangeDisplay: StoryObj = {
   },
 };
 
-export const AddChild: StoryObj = {
+export const AddChild: Story = {
   name: "Add child",
   render: BlockExample,
   play: async ({ canvasElement }: StoryContext) => {
@@ -87,7 +90,7 @@ export const AddChild: StoryObj = {
   },
 };
 
-export const RemoveChild: StoryObj = {
+export const RemoveChild: Story = {
   name: "Remove child",
   render: BlockExample,
   play: async ({ canvasElement }: StoryContext) => {
@@ -99,7 +102,7 @@ export const RemoveChild: StoryObj = {
   },
 };
 
-export const ResizeChild: StoryObj = {
+export const ResizeChild: Story = {
   name: "Resize child",
   render: BlockExample,
   play: async ({ canvasElement }: StoryContext) => {
@@ -112,7 +115,12 @@ export const ResizeChild: StoryObj = {
   },
 };
 
-export const ChildMargin: StoryObj = {
+export const ChildMargin: Story = {
   name: "Child with margin",
   render: ChildMarginExample,
+};
+
+export const ParentPadding: Story = {
+  name: "Padding on parent container",
+  render: (args) => <BlockExample {...args} style={{ paddingBlock: "20px" }} />,
 };
