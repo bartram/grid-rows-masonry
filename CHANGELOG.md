@@ -1,3 +1,11 @@
+## [1.1.5](https://github.com/bartram/grid-rows-masonry/compare/v1.1.4...v1.1.5) (2025-03-17)
+
+
+### Bug Fixes
+
+* include top padding in parent offset calculation ([ed6db4e](https://github.com/bartram/grid-rows-masonry/commit/ed6db4ea10df5a3fea14de4134cde42d0bea6c53))
+* include top padding in parent offset calculation ([#15](https://github.com/bartram/grid-rows-masonry/issues/15)) ([e6076c2](https://github.com/bartram/grid-rows-masonry/commit/e6076c25f9094d0c2be60be6e2f6b996e9d3a5e9))
+
 ## [1.1.4](https://github.com/bartram/grid-rows-masonry/compare/v1.1.3...v1.1.4) (2025-03-16)
 
 
