@@ -76,6 +76,9 @@
         "target": "chrome.docker",
         "preset": "iPhone 7"
       }
+    },
+    "pixelmatch": {
+      "includeAA": true
     }
   },
   "overrides": {
