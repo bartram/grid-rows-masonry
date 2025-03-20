@@ -4,6 +4,7 @@
     "types": [
       "vite/client"
     ],
-    "module": "nodenext"
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
   }
 }

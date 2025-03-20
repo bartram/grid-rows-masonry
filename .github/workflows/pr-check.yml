@@ -28,5 +28,11 @@ jobs:
       - name: Lint code
         run: npm run lint
 
+      - name: Run type check
+        run: npm run type-check
+
+      - name: Run unit tests
+        run: npm run test
+
       - name: Run visual tests
         run: npm run build-storybook && npm run test:visual -- --requireReference --reactUri file:./storybook-static --chromeTolerance 1

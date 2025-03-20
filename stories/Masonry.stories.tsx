@@ -3,7 +3,6 @@ import { BlockExample } from "./assets/BlockExample";
 import { ImageExample } from "./assets/ImageExample";
 import { ChildMarginExample } from "./assets/ChildMarginExample";
 import { CSSProperties } from "react";
-import { Masonry } from "../src/react";
 
 export type MasonryStoryArgs = {
   disabled?: boolean;
