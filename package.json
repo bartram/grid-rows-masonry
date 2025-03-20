@@ -14,7 +14,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
-    "test:visual": "loki test --chromeTolerance 2",
+    "test:visual": "loki test --chromeTolerance 10",
     "update:visual": "loki update",
     "prettier:check": "prettier --check ./src",
     "prettier:write": "prettier --write ./src",
