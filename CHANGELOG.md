@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/bartram/grid-rows-masonry/compare/v1.1.5...v1.2.0) (2025-03-20)
+
+
+### Features
+
+* batch updates with requestAnimationFrame ([41da0fa](https://github.com/bartram/grid-rows-masonry/commit/41da0fa5cbeed319af814a534cabdac6d975a91f))
+* batch updates with requestAnimationFrame ([#16](https://github.com/bartram/grid-rows-masonry/issues/16)) ([4648e5f](https://github.com/bartram/grid-rows-masonry/commit/4648e5f1bfabaec216b5fe5ac871947f6451fd76))
+
 ## [1.1.5](https://github.com/bartram/grid-rows-masonry/compare/v1.1.4...v1.1.5) (2025-03-17)
 
 
