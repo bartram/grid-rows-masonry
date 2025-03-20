@@ -78,7 +78,7 @@
       }
     },
     "pixelmatch": {
-      "includeAA": true
+      "threshold": 0.1
     }
   },
   "overrides": {

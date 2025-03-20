@@ -79,13 +79,14 @@ export class Masonry {
         rows[rowIndex].push(child);
       });
     rows.forEach((row, rowIndex) => {
-      row.forEach((child, columnIndex) => {
+      row.forEach((child) => {
         // include the row gap for all but the first row
         const gap = rowIndex > 0 ? rowGap : 0;
 
         // find the index of the column with the smallest height
-        let targetColumnIndex = columnIndex;
-        targetColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+        const targetColumnIndex = columnHeights.indexOf(
+          Math.min(...columnHeights),
+        );
 
         // reorder the columns before setting the margin
         child.style.gridColumnStart = `${targetColumnIndex + 1}`;
@@ -103,7 +104,9 @@ export class Masonry {
         // the child's offset, plus the child's inherit top margin and the row gap
         const marginTop =
           columnHeights[targetColumnIndex] - offsetTop + childMarginTop + gap;
-        child.style.marginTop = `${marginTop}px`;
+        // Round the margin to the nearest pixel to avoid unnecessary layout thrashing
+        // @todo this could be optimized to round to a multiple of the screen's pixel ratio
+        child.style.marginTop = `${Math.round(marginTop)}px`;
 
         // Add the height of this child element, its margin, and the row gap to the column height
         columnHeights[targetColumnIndex] +=
