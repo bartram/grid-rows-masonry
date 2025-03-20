@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Masonry } from "./Masonry";
 import { test } from "vitest";
+import "@testing-library/jest-dom";
 
 test("should accept JSX.Elements as children", () => {
   render(
