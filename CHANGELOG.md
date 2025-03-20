@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/bartram/grid-rows-masonry/compare/v1.2.0...v1.2.1) (2025-03-20)
+
+
+### Bug Fixes
+
+* specify component type in Masonry component ([697a97c](https://github.com/bartram/grid-rows-masonry/commit/697a97c726a049d261c76438843e31e969f92126))
+* specify component type in Masonry component ([#18](https://github.com/bartram/grid-rows-masonry/issues/18)) ([1e9c298](https://github.com/bartram/grid-rows-masonry/commit/1e9c29864db268ef8dcb89315431027f15f9cb73))
+
 # [1.2.0](https://github.com/bartram/grid-rows-masonry/compare/v1.1.5...v1.2.0) (2025-03-20)
 
 
