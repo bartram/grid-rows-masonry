@@ -101,12 +101,13 @@ export class Masonry {
         // Find the difference between the child's top and the parent's top
         const offsetTop = childTop - childMarginTop - parentTop;
         // Set the child's top margin to the difference between the current column height and
-        // the child's offset, plus the child's inherit top margin and the row gap
-        const marginTop =
-          columnHeights[targetColumnIndex] - offsetTop + childMarginTop + gap;
+        // the child's offset, plus the child's inherit top margin and the row gap.
         // Round the margin to the nearest pixel to avoid unnecessary layout thrashing
         // @todo this could be optimized to round to a multiple of the screen's pixel ratio
-        child.style.marginTop = `${Math.round(marginTop)}px`;
+        const marginTop = Math.round(
+          columnHeights[targetColumnIndex] - offsetTop + childMarginTop + gap,
+        );
+        child.style.marginTop = `${marginTop}px`;
 
         // Add the height of this child element, its margin, and the row gap to the column height
         columnHeights[targetColumnIndex] +=
