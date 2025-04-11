@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/bartram/grid-rows-masonry/compare/v1.2.1...v1.2.2) (2025-04-11)
+
+
+### Bug Fixes
+
+* get the grid top for every child ([3f81406](https://github.com/bartram/grid-rows-masonry/commit/3f814061026cb4501992f83d25ba38a0517b128a))
+* get the grid top for every child ([#20](https://github.com/bartram/grid-rows-masonry/issues/20)) ([a169a90](https://github.com/bartram/grid-rows-masonry/commit/a169a9088711e1748638d46b3a18024f5fc398be))
+
 ## [1.2.1](https://github.com/bartram/grid-rows-masonry/compare/v1.2.0...v1.2.1) (2025-03-20)
 
 
