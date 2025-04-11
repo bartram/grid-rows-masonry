@@ -58,10 +58,7 @@ export class Masonry {
       console.warn("Masonry layout is already supported natively");
       return;
     }
-
     const parentPaddingTop = parseFloat(gridStyle.paddingTop) || 0;
-    const parentTop = this.grid.getBoundingClientRect().top + parentPaddingTop;
-
     const numColumns = gridStyle.gridTemplateColumns.split(" ").length;
     if (numColumns <= 1) {
       // no need for masonry if there's only one column
@@ -91,15 +88,18 @@ export class Masonry {
         // reorder the columns before setting the margin
         child.style.gridColumnStart = `${targetColumnIndex + 1}`;
 
-        // calculate the diff for this child element from the bounding rect of the parent
-        const { top: childTop, height: childHeight } =
-          child.getBoundingClientRect();
         const childStyle = window.getComputedStyle(child);
         const childMarginTop = parseFloat(childStyle.marginTop) || 0;
         const childMarginBottom = parseFloat(childStyle.marginBottom) || 0;
 
-        // Find the difference between the child's top and the parent's top
-        const offsetTop = childTop - childMarginTop - parentTop;
+        // Calculate the offset top for the child by subtracting the parent top and padding from the child top and margin
+        const { top, height: childHeight } = child.getBoundingClientRect();
+        const offsetTop =
+          top -
+          childMarginTop -
+          parentPaddingTop -
+          this.grid.getBoundingClientRect().top;
+
         // Set the child's top margin to the difference between the current column height and
         // the child's offset, plus the child's inherit top margin and the row gap.
         // Round the margin to the nearest pixel to avoid unnecessary layout thrashing
