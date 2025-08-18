@@ -1,15 +1,27 @@
 export default {
-  branches: ["main"], // Defines the branches to trigger releases
+  branches: ["main"],
   plugins: [
-    "@semantic-release/commit-analyzer", // Analyze commit messages
-    "@semantic-release/release-notes-generator", // Generate release notes
-    "@semantic-release/changelog", // Update changelog
-    "@semantic-release/npm", // Publish to npm
-    "@semantic-release/github", // Create GitHub releases
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        releaseRules: [
+          { type: "docs", release: "patch" },
+          { type: "build", release: "patch" },
+          { type: "chore", release: "patch" },
+          { type: "refactor", release: "patch" },
+          { type: "feat", release: "minor" },
+          { type: "fix", release: "patch" },
+        ],
+      },
+    ],
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/npm",
+    "@semantic-release/github",
     [
       "@semantic-release/git",
       {
-        assets: ["CHANGELOG.md", "package.json", "package-lock.json"], // Push changes back to the repo
+        assets: ["CHANGELOG.md", "package.json", "package-lock.json"],
         message:
           "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
       },
