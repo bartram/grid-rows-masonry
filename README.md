@@ -102,9 +102,9 @@ export default function Gallery() {
 | **CSS Grid masonry polyfill** (`@prof-dev/masonry`) | Vanilla JS polyfill           | Detects browser support for `grid-template-rows: masonry`, falls back to simulation; CSS Grid-based. ([GitHub][8])          | Similar concept, but does not reorder items.                                                      |
 | **react-plock**                                     | React component               | Ultra tiny (<1 kB gzipped), balanced layout, responsive, tree-shakeable. ([GitHub][9])                                      | Extremely lightweight and performance-oriented, but focuses on React only.                        |
 
-[1]: https://www.npmjs.com/package/masonry-layout?utm_source=chatgpt.com "masonry-layout"
+[1]: https://www.npmjs.com/package/masonry-layout "masonry-layout"
 [2]: https://github.com/desandro/masonry "desandro/masonry: :love_hotel: Cascading grid layout plugin"
-[3]: https://www.npmjs.com/package/react-layout-masonry?utm_source=chatgpt.com "react-layout-masonry"
+[3]: https://www.npmjs.com/package/react-layout-masonry "react-layout-masonry"
 [4]: https://www.npmjs.com/package/masonic "masonic"
 [5]: https://github.com/jaredLunde/masonic "jaredLunde/masonic: 🧱 High-performance masonry layouts ..."
 [6]: https://www.npmjs.com/package/react-responsive-masonry "react-responsive-masonry"
