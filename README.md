@@ -116,7 +116,7 @@ export default function Gallery() {
 
 ## Live demos
 
-- [**Vanilla CodeSandbox**](https://codesandbox.io/p/sandbox/5qhrq7)
+- [**Vanilla CodeSandbox**](https://codesandbox.io/p/sandbox/grid-rows-masonry-vanilla-js-example-6kz8nw)
 - [**React CodeSandbox**](https://codesandbox.io/p/sandbox/grid-rows-masonry-react-example-r3sjf8)
 
 ---
