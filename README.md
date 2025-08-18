@@ -136,7 +136,7 @@ Initializes the ponyfill on a Grid container (`display: grid`) with 2+ columns.
 ## Best practices
 
 - Define **columns & gaps in CSS**; the ponyfill only computes vertical placement.
-- No need to reinitialize when content changes-the library responds to mutations of the grid element, and updates the layout.
+- No need to reinitialize when content changes–the library responds to mutations of the grid element, and updates the layout.
 
 ---
 
@@ -154,7 +154,7 @@ Are you using `grid-rows-masonry`? Open a PR to add your logo/link here!
 No. It uses `grid-column-start` to change the column placement of elements to ensure the best fit, but DOM elements are never added or removed.
 
 **Will it conflict with native masonry later?**  
-No. When native `grid-template-rows: masonry` is widely supported, you can feature-detect and skip initialization.
+No. When native `grid-template-rows: masonry` is supported by the user's browser, it will feature-detect and skip initialization.
 
 ---
 
