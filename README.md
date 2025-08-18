@@ -9,7 +9,7 @@ _Use `grid-template-rows: masonry` today._
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![GitHub stars](https://img.shields.io/github/stars/bartram/grid-rows-masonry?style=social)](https://github.com/bartram/grid-rows-masonry/stargazers)
 
-`Grid Rows Masonry` is a **ponyfill** for the [CSS masonry layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Masonry_layout), to bring the feature to [browsers that don’t yet support it](https://caniuse.com/mdn-css_properties_grid-template-rows_masonry). It reflows items using a lightweight algorithm that respects your CSS Grid columns and gaps.
+`Grid Rows Masonry` is a **ponyfill** for the [CSS masonry layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Masonry_layout), to bring the feature to [browsers that don’t yet support it](https://caniuse.com/mdn-css_properties_grid-template-rows_masonry). It reflows items using a lightweight algorithm that respects your CSS Grid columns and gaps without absolute positioning and without changing the order of elements in the DOM.
 
 ---
 
