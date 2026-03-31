@@ -3,4 +3,4 @@
 .DS_Store
 storybook-static
 pnpm-lock.yaml
-.npm-cache/
+.npm-cache
