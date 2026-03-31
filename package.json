@@ -21,7 +21,10 @@
     "lint": "eslint ./src",
     "type-check": "tsc -p tsconfig.build.json --noEmit"
   },
-  "git repository": "https://github.com/bartram/grid-rows-masonry",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartram/grid-rows-masonry.git"
+  },
   "keywords": [
     "css-grid",
     "css",
