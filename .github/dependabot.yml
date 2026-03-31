@@ -5,15 +5,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 2
     groups:
-      npm-security:
-        applies-to: "security-updates"
-        patterns:
-          - "*"
-      npm-version-updates:
-        applies-to: "version-updates"
+      npm-dependencies:
         patterns:
           - "*"
 
@@ -21,14 +14,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 1
     groups:
-      github-actions-security:
-        applies-to: "security-updates"
-        patterns:
-          - "*"
-      github-actions-version-updates:
-        applies-to: "version-updates"
+      github-actions:
         patterns:
           - "*"
