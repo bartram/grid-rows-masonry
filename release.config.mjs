@@ -1,5 +1,6 @@
 export default {
   branches: ["main"],
+  repositoryUrl: "https://github.com/bartram/grid-rows-masonry.git",
   plugins: [
     [
       "@semantic-release/commit-analyzer",
