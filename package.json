@@ -95,7 +95,6 @@
     }
   },
   "overrides": {
-    "brace-expansion": "^5.0.5",
     "ink": {
       "react": "^17.0.2"
     },
