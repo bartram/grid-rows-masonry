@@ -47,12 +47,8 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.6",
     "@semantic-release/npm": "^13.1.5",
-    "@storybook/addon-essentials": "^8.6.18",
-    "@storybook/addon-interactions": "^8.6.18",
-    "@storybook/blocks": "^8.6.18",
-    "@storybook/react": "^8.6.18",
-    "@storybook/react-vite": "^8.6.18",
-    "@storybook/test": "^8.6.18",
+    "@storybook/react": "^10.3.3",
+    "@storybook/react-vite": "^10.3.3",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -66,10 +62,12 @@
     "nodemon": "^3.1.14",
     "prettier": "^3.8.1",
     "semantic-release": "^25.0.3",
-    "storybook": "^8.6.18",
+    "storybook": "^10.3.3",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.58.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "eslint-plugin-storybook": "10.3.3",
+    "@storybook/addon-docs": "^10.3.3"
   },
   "peerDependencies": {
     "react": ">=17"

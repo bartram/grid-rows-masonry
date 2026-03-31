@@ -1,4 +1,4 @@
-import type { Meta, StoryContext, StoryObj } from "@storybook/react";
+import type { Meta, StoryContext, StoryObj } from "@storybook/react-vite";
 import { BlockExample } from "./assets/BlockExample";
 import { ImageExample } from "./assets/ImageExample";
 import { ChildMarginExample } from "./assets/ChildMarginExample";
