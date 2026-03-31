@@ -5,13 +5,14 @@ const config: StorybookConfig = {
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
-
-  addons: ["@storybook/addon-docs"],
+  addons: ["@storybook/addon-essentials", "@storybook/addon-interactions"],
   staticDirs: ["../stories/assets"],
-
   framework: {
     name: "@storybook/react-vite",
     options: {},
-  }
+  },
+  docs: {
+    autodocs: true,
+  },
 };
 export default config;
