@@ -97,7 +97,6 @@
   "overrides": {
     "ink": {
       "react": "^17.0.2"
-    },
-    "picomatch": "^4.0.4"
+    }
   }
 }
