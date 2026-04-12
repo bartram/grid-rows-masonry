@@ -8,9 +8,7 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  reporter: process.env.CI
-    ? [["github"], ["html", { open: "never" }]]
-    : "list",
+  reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : "list",
   use: {
     baseURL: "http://127.0.0.1:6006",
     trace: "retain-on-failure",
@@ -41,8 +39,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command:
-      "python3 -m http.server 6006 --directory storybook-static --bind 127.0.0.1",
+    command: "npm run serve-storybook",
     url: "http://127.0.0.1:6006",
     reuseExistingServer: !process.env.CI,
   },
