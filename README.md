@@ -162,6 +162,23 @@ No. When native `grid-template-rows: masonry` is supported by the user's browser
 
 Issues and PRs welcome!
 
+### Visual regression tests
+
+Install the Chromium browser once:
+
+```bash
+npx playwright install chromium
+```
+
+Then use the Storybook-backed visual regression commands:
+
+```bash
+npm run test:visual
+npm run update:visual
+```
+
+`test:visual` rebuilds `storybook-static`, serves it locally, and compares each story snapshot against the checked-in Playwright baselines. `update:visual` refreshes those baselines when the visual change is intentional.
+
 ---
 
 ## License
