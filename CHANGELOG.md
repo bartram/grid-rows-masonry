@@ -1,3 +1,5 @@
+## [1.2.10](https://github.com/bartram/grid-rows-masonry/compare/v1.2.9...v1.2.10) (2026-04-13)
+
 ## [1.2.9](https://github.com/bartram/grid-rows-masonry/compare/v1.2.8...v1.2.9) (2026-04-07)
 
 ## [1.2.8](https://github.com/bartram/grid-rows-masonry/compare/v1.2.7...v1.2.8) (2026-04-02)
