@@ -39,8 +39,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run serve-storybook",
+    command: "npx http-server ./storybook-static -p 6006 -a 127.0.0.1 -c-1",
     url: "http://127.0.0.1:6006",
     reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
   },
 });
