@@ -1,3 +1,11 @@
+## [1.2.11](https://github.com/bartram/grid-rows-masonry/compare/v1.2.10...v1.2.11) (2026-04-15)
+
+
+### Bug Fixes
+
+* publish build input restriction ([63411df](https://github.com/bartram/grid-rows-masonry/commit/63411dfcfa99760d6c76fdea7f8205a94570988a))
+* publish build input restriction ([817d8f0](https://github.com/bartram/grid-rows-masonry/commit/817d8f0f08895175c1389622423178c79a197d70))
+
 ## [1.2.10](https://github.com/bartram/grid-rows-masonry/compare/v1.2.9...v1.2.10) (2026-04-13)
 
 ## [1.2.9](https://github.com/bartram/grid-rows-masonry/compare/v1.2.8...v1.2.9) (2026-04-07)
